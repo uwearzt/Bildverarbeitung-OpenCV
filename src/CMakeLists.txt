@@ -6,7 +6,7 @@ link_directories("/usr/local/opt/opencv3/lib")
 
 project(Bildverarbeitung-OpenCV)
 
-set(OPENCVLIBS opencv_core opencv_imgcodecs opencv_imgproc opencv_highgui)
+set(OPENCVLIBS opencv_core opencv_imgcodecs opencv_imgproc opencv_highgui opencv_video opencv_videoio)
 
 add_executable(readimg readimg.cpp)
 target_link_libraries(readimg ${OPENCVLIBS})
@@ -28,3 +28,12 @@ target_link_libraries(histograms ${OPENCVLIBS})
 
 add_executable(bluebox bluebox.cpp)
 target_link_libraries(bluebox ${OPENCVLIBS})
+
+add_executable(video video.cpp)
+target_link_libraries(video ${OPENCVLIBS})
+
+add_executable(video_sobel video_sobel.cpp)
+target_link_libraries(video_sobel ${OPENCVLIBS})
+
+add_executable(video_diff video_diff.cpp)
+target_link_libraries(video_diff ${OPENCVLIBS})
